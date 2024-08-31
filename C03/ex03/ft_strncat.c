@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hasbayou <hasbayou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/31 13:54:29 by hasbayou          #+#    #+#             */
-/*   Updated: 2024/08/31 16:18:42 by hasbayou         ###   ########.fr       */
+/*   Created: 2024/08/31 16:21:23 by hasbayou          #+#    #+#             */
+/*   Updated: 2024/08/31 16:23:44 by hasbayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dest, char *src)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int		i;
-	int		j;
+	unsigned int		i;
+	unsigned int		j;
 
 	i = 0;
 	j = 0;
 	while (dest[i])
 		i++;
-	while (src[j])
+	while (j < nb && src[j])
 	{
 		dest[i] = src[j];
 		i++;
