@@ -57,6 +57,6 @@
   "C_Cpp_Runner.useLinkTimeOptimization": false,
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "code-runner.executorMap": {
-        "c": "cd $dir && cc -Wall -Wextra $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt && rm $fileNameWithoutExt",
+        "c": "cd $dir && cc -Wall -Wextra -fsanitize=address $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt && rm $fileNameWithoutExt",
   }
 }

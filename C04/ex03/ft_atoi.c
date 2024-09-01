@@ -1,41 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hasbayou <hasbayou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/31 20:38:47 by hasbayou          #+#    #+#             */
-/*   Updated: 2024/09/01 01:10:54 by hasbayou         ###   ########.fr       */
+/*   Created: 2024/09/01 13:51:47 by hasbayou          #+#    #+#             */
+/*   Updated: 2024/09/01 14:03:22 by hasbayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
+int	ft_atoi(char *str)
 {
+	int	nb;
+	int	sign;
 	int	i;
-	int	j;
 
-	if (!to_find[0])
-		return (str);
+	sign = 1;
+	nb = 0;
 	i = 0;
-	while (str[i])
+	while (str[i] <= 32)
+		i++;
+	while (str[i] == '-' || str[i] == '+')
 	{
-		j = 0;
-		while (str[i + j] == to_find[j] && to_find[j])
-			j++;
-		if (to_find[j] == 0)
-			return (str + i);
+		if (str[i] == '-')
+		{
+			sign *= -1;
+			nb = -nb;
+		}
 		i++;
 	}
-	return (0);
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		nb = nb * 10 + (str[i] - 48);
+		i++;
+	}
+	return (nb * sign);
 }
-
-// #include <stdio.h>
-
-// int main()
-// {
-// 	char *str = "anass";
-// 	char *to_find = "ass";
-
-// 	printf("%s" ,ft_strstr(str, to_find));
-// }

@@ -6,7 +6,7 @@
 /*   By: hasbayou <hasbayou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 16:21:23 by hasbayou          #+#    #+#             */
-/*   Updated: 2024/08/31 16:23:44 by hasbayou         ###   ########.fr       */
+/*   Updated: 2024/09/01 01:28:22 by hasbayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 		i++;
 		j++;
 	}
+	dest[i] = '\0';
 	return (dest);
 }

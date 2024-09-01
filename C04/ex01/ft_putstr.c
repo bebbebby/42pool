@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hasbayou <hasbayou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/31 20:38:47 by hasbayou          #+#    #+#             */
-/*   Updated: 2024/09/01 01:10:54 by hasbayou         ###   ########.fr       */
+/*   Created: 2024/08/31 23:40:40 by hasbayou          #+#    #+#             */
+/*   Updated: 2024/09/01 14:01:32 by hasbayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
+#include <unistd.h>
+
+void	ft_putstr(char *str)
 {
 	int	i;
-	int	j;
 
-	if (!to_find[0])
-		return (str);
 	i = 0;
 	while (str[i])
-	{
-		j = 0;
-		while (str[i + j] == to_find[j] && to_find[j])
-			j++;
-		if (to_find[j] == 0)
-			return (str + i);
 		i++;
-	}
-	return (0);
+	write(1, str, i);
 }
-
-// #include <stdio.h>
 
 // int main()
 // {
-// 	char *str = "anass";
-// 	char *to_find = "ass";
+// 	char str[] = "pussytr\n";
 
-// 	printf("%s" ,ft_strstr(str, to_find));
+// 	ft_putstr(str);
 // }
