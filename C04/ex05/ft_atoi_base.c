@@ -6,7 +6,7 @@
 /*   By: hasbayou <hasbayou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 17:40:02 by hasbayou          #+#    #+#             */
-/*   Updated: 2024/09/01 21:56:31 by hasbayou         ###   ########.fr       */
+/*   Updated: 2024/09/02 00:07:06 by hasbayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,23 +46,22 @@ int	check_base(char *base)
 	return (1);
 }
 
-int	get_val(char c ,char *base)
+int	get_val(char c, char *base)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (base[i])
 	{
 		if (base[i] == c)
-			return i;
+			return (i);
 		i++;
 	}
-	return 0;
+	return (-1);
 }
 
 int	ft_atoi_base(char *str, char *base)
 {
-	int	i;
 	int	nb;
 	int	sign;
 
@@ -70,36 +69,32 @@ int	ft_atoi_base(char *str, char *base)
 		return (0);
 	sign = 1;
 	nb = 0;
-	i = 0;
-	while (str[i] <= 32)
-		i++;
-	while (str[i] == '-' || str[i] == '+')
+	while ((*str >= 9 && *str <= 13) || *str == 32)
+		str++;
+	while (*str == '-' || *str == '+')
 	{
-		if (str[i] == '-')
+		if (*str == '-')
 		{
 			sign *= -1;
 			nb = -nb;
 		}
-		i++;
+		str++;
 	}
-	while ((str[i] >= '0' && str[i] <= '9') || (str[i] >= 'a' && str[i] <= 'z'))
+	while (*str && get_val(*str, base) != -1)
 	{
-		if (get_val(str[i] ,base))
-		{
-			nb = nb * ft_strlen(base) + get_val(str[i] ,base);
-		}
-		i++;
+		nb = nb * ft_strlen(base) + get_val(*str, base);
+		str++;
 	}
 	return (nb * sign);
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int main()
-{
-	char arr[] = "12ab..a";
-	char *base = "0123456789abcdef";
+// int main()
+// {
+// 	char arr[] = "-~~~~~~~~'~~~~~~'~'~~~'''''''~~'$";
+// 	char *base = "'~";
 
-	int res = ft_atoi_base(arr, base);
-	printf("%d" ,res);
-}
+// 	int res = ft_atoi_base(arr, base);
+// 	printf("%d" ,res);
+// }

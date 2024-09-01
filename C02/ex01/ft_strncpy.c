@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hasbayou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hasbayou <hasbayou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/28 17:23:43 by hasbayou          #+#    #+#             */
-/*   Updated: 2024/08/28 17:54:04 by hasbayou         ###   ########.fr       */
+/*   Created: 2024/09/01 04:53:57 by hasbayou          #+#    #+#             */
+/*   Updated: 2024/09/01 04:54:13 by hasbayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
