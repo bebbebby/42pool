@@ -6,7 +6,7 @@
 /*   By: hasbayou <hasbayou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 17:40:02 by hasbayou          #+#    #+#             */
-/*   Updated: 2024/09/01 19:35:39 by hasbayou         ###   ########.fr       */
+/*   Updated: 2024/09/01 21:56:31 by hasbayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,23 @@ int	check_base(char *base)
 	return (1);
 }
 
+int	get_val(char c ,char *base)
+{
+	int i;
+
+	i = 0;
+	while (base[i])
+	{
+		if (base[i] == c)
+			return i;
+		i++;
+	}
+	return 0;
+}
+
 int	ft_atoi_base(char *str, char *base)
 {
+	int	i;
 	int	nb;
 	int	sign;
 
@@ -55,29 +70,36 @@ int	ft_atoi_base(char *str, char *base)
 		return (0);
 	sign = 1;
 	nb = 0;
-	while (*str <= 32)
-		str++;
-	while (*str == '-' || *str == '+')
+	i = 0;
+	while (str[i] <= 32)
+		i++;
+	while (str[i] == '-' || str[i] == '+')
 	{
-		if (*str == '-')
+		if (str[i] == '-')
 		{
 			sign *= -1;
 			nb = -nb;
 		}
-		str++;
+		i++;
 	}
-	while (*str >= '0' && *str <= '9')
+	while ((str[i] >= '0' && str[i] <= '9') || (str[i] >= 'a' && str[i] <= 'z'))
 	{
-		nb = nb * ft_strlen(base) + (base[*str - '0']);
-		str++;
+		if (get_val(str[i] ,base))
+		{
+			nb = nb * ft_strlen(base) + get_val(str[i] ,base);
+		}
+		i++;
 	}
 	return (nb * sign);
 }
 
-// int main()
-// {
-// 	char arr[] = "---+12345";
-// 	char *base = "0123456789abcdef";
+#include <stdio.h>
 
-// 	ft_atoi_base(arr, base);
-// }
+int main()
+{
+	char arr[] = "12ab..a";
+	char *base = "0123456789abcdef";
+
+	int res = ft_atoi_base(arr, base);
+	printf("%d" ,res);
+}
