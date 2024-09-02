@@ -6,7 +6,7 @@
 /*   By: hasbayou <hasbayou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 00:13:37 by hasbayou          #+#    #+#             */
-/*   Updated: 2024/09/02 00:12:16 by hasbayou         ###   ########.fr       */
+/*   Updated: 2024/09/02 12:10:33 by hasbayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ void	ft_putnbr(int nb)
 {
 	unsigned int	nb_abs;
 
-	nb_abs = nb;
+	nb_abs = (unsigned int)nb;
 	if (nb < 0)
 	{
 		ft_putchar('-');
-		nb_abs = ~0u - nb + 1;
+		nb_abs = ~0u - nb_abs + 1;
 	}
 	ft_putuint(nb_abs);
 }
