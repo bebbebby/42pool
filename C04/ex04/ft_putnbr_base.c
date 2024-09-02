@@ -6,7 +6,7 @@
 /*   By: hasbayou <hasbayou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 17:32:27 by hasbayou          #+#    #+#             */
-/*   Updated: 2024/09/02 12:06:05 by hasbayou         ###   ########.fr       */
+/*   Updated: 2024/09/02 14:01:22 by hasbayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	check_base(char *base)
 
 void	ft_putuint(unsigned int nb, unsigned int base_len, char *base)
 {
-	if (nb > base_len)
+	if (nb / base_len)
 		ft_putuint(nb / base_len, base_len, base);
 	ft_putchar(base[nb % base_len]);
 }

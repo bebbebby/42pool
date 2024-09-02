@@ -1,3 +1,6 @@
 CompileFlags:
     Add: [-Wall, -Wextra, -Wshadow, -Wformat=2, -Wconversion, -Wcast-align, -Wnull-dereference, -Werror=return-type]
     Compiler: gcc
+
+InlayHints:
+    Enabled: False
