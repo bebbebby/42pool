@@ -6,7 +6,7 @@
 /*   By: hasbayou <hasbayou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 12:02:29 by hasbayou          #+#    #+#             */
-/*   Updated: 2024/09/03 12:02:30 by hasbayou         ###   ########.fr       */
+/*   Updated: 2024/09/03 16:23:51 by hasbayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,5 @@ int main(int ac ,char **av)
 {
 	(void)ac;
 	ft_putstr(av[0]);
+	write (1, "\n", 1);
 }
