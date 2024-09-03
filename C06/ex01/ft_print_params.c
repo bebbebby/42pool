@@ -1,34 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_prime.c                                      :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hasbayou <hasbayou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/02 22:59:47 by hasbayou          #+#    #+#             */
-/*   Updated: 2024/09/03 00:27:41 by hasbayou         ###   ########.fr       */
+/*   Created: 2024/09/03 12:02:46 by hasbayou          #+#    #+#             */
+/*   Updated: 2024/09/03 12:05:00 by hasbayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_is_prime(int nb)
+#include <unistd.h>
+
+void	ft_putstr(char *str)
 {
 	int	i;
 
-	i = 2;
-	if (nb < 2)
-		return (0);
-	while (i < nb)
+	i = 0;
+	while(str[i])
 	{
-		if (nb % i == 0)
-			return (0);
+		write (1, &str[i] ,1);
 		i++;
 	}
-	return (1);
 }
 
-#include <stdio.h>
-
-int main()
+int main(int ac, char **av)
 {
-	printf("%d" ,ft_is_prime(27));
+	if (ac > 1)
+	{
+		int	i;
+
+		i = 1;
+		while (av[i])
+		{
+			ft_putstr(av[i]);
+			write (1, "\n", 1);
+			i++;
+		}
+	}
 }
