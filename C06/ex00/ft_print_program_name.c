@@ -6,7 +6,7 @@
 /*   By: hasbayou <hasbayou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 12:02:29 by hasbayou          #+#    #+#             */
-/*   Updated: 2024/09/03 16:23:51 by hasbayou         ###   ########.fr       */
+/*   Updated: 2024/09/03 16:29:07 by hasbayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ void	ft_putstr(char *str)
 	int	i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
-		write (1, &str[i] ,1);
+		write (1, &str[i], 1);
 		i++;
 	}
 }
 
-int main(int ac ,char **av)
+int	main(int ac, char **av)
 {
 	(void)ac;
 	ft_putstr(av[0]);
