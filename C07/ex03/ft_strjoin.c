@@ -6,7 +6,7 @@
 /*   By: hasbayou <hasbayou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 13:46:33 by hasbayou          #+#    #+#             */
-/*   Updated: 2024/09/04 18:30:51 by hasbayou         ###   ########.fr       */
+/*   Updated: 2024/09/07 20:23:54 by hasbayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,12 +77,12 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	return (tab);
 }
 
-// int main()
-// {
-// 	int	size = 3;
-// 	char	*strs[] = {"apple" ,"banana" ,"potato"};
-// 	char *sep = ",";
-// 	char *res = ft_strjoin(size, strs, sep);
+int main()
+{
+	int	size = 3;
+	char	*strs[] = {"apple" ,"banana" ,"potato"};
+	char *sep = ",";
+	char *res = ft_strjoin(size, strs, sep);
 
-// 	printf("%s" ,res);
-// }
+	printf("%s" ,res);
+}

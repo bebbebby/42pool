@@ -6,16 +6,11 @@
 /*   By: hasbayou <hasbayou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 17:40:02 by hasbayou          #+#    #+#             */
-/*   Updated: 2024/09/07 18:04:58 by hasbayou         ###   ########.fr       */
+/*   Updated: 2024/09/07 20:36:47 by hasbayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-
-void ft_putchar(char c)
-{
-	write (1, &c, 1);
-}
 
 int	ft_strlen(char *str)
 {
@@ -93,25 +88,15 @@ int	ft_atoi_base(char *str, char *base)
 	return (nb * sign);
 }
 
-void	ft_putuint(unsigned int nb, unsigned int base_len, char *base)
+char *ft_convert_base(char *nbr, char *base_from, char *base_to)
 {
-	if (nb / base_len)
-		ft_putuint(nb / base_len, base_len, base);
-	ft_putchar(base[nb % base_len]);
+	int	res;
+	if (get_base_len(base_from) < 2 || get_base_len(base_to) < 2)
+		return (NULL);
+	res = ft_atoi_base(nbr, base_from);
+	return 0;
 }
 
-void	ft_putnbr_base(int nbr, char *base)
+int main()
 {
-	unsigned int	nb_abs;
-
-	if (get_base_len(base) == 0)
-		return ;
-	nb_abs = (unsigned int)nbr;
-	if (nbr < 0)
-	{
-		ft_putchar('-');
-		nb_abs = ~0u - nb_abs + 1;
-	}
-	ft_putuint(nb_abs, (unsigned int)ft_strlen(base), base);
 }
-
