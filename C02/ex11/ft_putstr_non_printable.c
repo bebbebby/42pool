@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hasbayou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hasbayou <hasbayou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 19:51:56 by hasbayou          #+#    #+#             */
-/*   Updated: 2024/08/31 09:42:13 by hasbayou         ###   ########.fr       */
+/*   Updated: 2024/09/07 17:21:46 by hasbayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,3 +37,9 @@ void	ft_putstr_non_printable(char *str)
 		i++;
 	}
 }
+
+// int main()
+// {
+// 	char str[] = {-12, 49 ,50 ,0};
+// 	ft_putstr_non_printable(str);
+// }

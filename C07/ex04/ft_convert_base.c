@@ -1,14 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi_base.c                                     :+:      :+:    :+:   */
+/*   ft_convert_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hasbayou <hasbayou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 17:40:02 by hasbayou          #+#    #+#             */
-/*   Updated: 2024/09/04 19:18:30 by hasbayou         ###   ########.fr       */
+/*   Updated: 2024/09/07 18:04:58 by hasbayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
+
+void ft_putchar(char c)
+{
+	write (1, &c, 1);
+}
 
 int	ft_strlen(char *str)
 {
@@ -86,13 +93,25 @@ int	ft_atoi_base(char *str, char *base)
 	return (nb * sign);
 }
 
-// #include <stdio.h>
+void	ft_putuint(unsigned int nb, unsigned int base_len, char *base)
+{
+	if (nb / base_len)
+		ft_putuint(nb / base_len, base_len, base);
+	ft_putchar(base[nb % base_len]);
+}
 
-// int main()
-// {
-// 	char arr[] = "-~~~~~~~~'~~~~~~'~'~~~'''''''~~'$";
-// 	char *base = "'~";
+void	ft_putnbr_base(int nbr, char *base)
+{
+	unsigned int	nb_abs;
 
-// 	int res = ft_atoi_base(arr, base);
-// 	printf("%d" ,res);
-// }
+	if (get_base_len(base) == 0)
+		return ;
+	nb_abs = (unsigned int)nbr;
+	if (nbr < 0)
+	{
+		ft_putchar('-');
+		nb_abs = ~0u - nb_abs + 1;
+	}
+	ft_putuint(nb_abs, (unsigned int)ft_strlen(base), base);
+}
+

@@ -1,39 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hasbayou <hasbayou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/28 19:01:33 by hasbayou          #+#    #+#             */
-/*   Updated: 2024/09/03 19:48:39 by hasbayou         ###   ########.fr       */
+/*   Created: 2024/09/03 22:37:25 by hasbayou          #+#    #+#             */
+/*   Updated: 2024/09/03 22:54:08 by hasbayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcapitalize(char *str)
+#include <stdlib.h>
+
+char	*ft_strdup(char *src)
 {
-	int	i;
-	int	j;
+	int				i;
+	unsigned int	len;
+	char			*str;
 
 	i = 0;
-	j = 1;
-	while (str[i])
+	len = 0;
+	while (src[len])
+		len++;
+	str = malloc(sizeof(char) * len);
+	if (!str)
+		return (NULL);
+	while (src[i])
 	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
-			str[i] += 32;
-		if (str[i] >= 'a' && str[i] <= 'z')
-		{
-			if (j)
-			{
-				str[i] -= 32;
-				j = 0;
-			}
-		}
-		else if (str[i] >= '0' && str[i] <= '9')
-			j = 0;
-		else
-			j = 1;
+		str[i] = src[i];
 		i++;
 	}
+	str[i] = '\0';
 	return (str);
 }
