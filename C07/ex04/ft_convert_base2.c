@@ -6,16 +6,16 @@
 /*   By: hasbayou <hasbayou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 18:05:24 by hasbayou          #+#    #+#             */
-/*   Updated: 2024/09/08 07:58:32 by hasbayou         ###   ########.fr       */
+/*   Updated: 2024/09/08 10:31:26 by hasbayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+// #include <stdio.h>
 #include <stdlib.h>
 
-int count_digits(unsigned int nb, int base_len)
+int	count_digits(unsigned int nb, int base_len)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (nb == 0)
@@ -23,11 +23,10 @@ int count_digits(unsigned int nb, int base_len)
 	while (nb > 0)
 	{
 		count += 1;
-		nb /= base_len;
+		nb /= (unsigned int)base_len;
 	}
-	return count;
+	return (count);
 }
-
 
 int	get_base_len(char *base)
 {
@@ -63,12 +62,12 @@ void	convert(char *arr, int i, unsigned int nbr, char *base_to)
 	}
 }
 
-char	*itoa_base(int nb ,char *base_to)
+char	*itoa_base(int nb, char *base_to)
 {
-	char *arr;
-	int	i;
-	unsigned int nbr;
-	int	len;
+	char			*arr;
+	int				i;
+	unsigned int	nbr;
+	int				len;
 
 	if (get_base_len(base_to) < 2)
 		return (NULL);
@@ -86,7 +85,7 @@ char	*itoa_base(int nb ,char *base_to)
 		return (NULL);
 	i = len - 1;
 	arr[i + 1] = '\0';
-	convert(arr, i, nbr ,base_to);
+	convert(arr, i, nbr, base_to);
 	if (nb < 0)
 		arr[0] = '-';
 	return (arr);

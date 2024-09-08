@@ -6,11 +6,10 @@
 /*   By: hasbayou <hasbayou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 13:46:33 by hasbayou          #+#    #+#             */
-/*   Updated: 2024/09/07 20:23:54 by hasbayou         ###   ########.fr       */
+/*   Updated: 2024/09/08 10:53:54 by hasbayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdlib.h>
 
 int	ft_strlen(char *str)
@@ -27,9 +26,9 @@ int	ft_strlen(char *str)
 
 char	*ft_allocate_join(int size, char **strs, char *sep)
 {
-	int	i;
-	char *tab;
-	int	len;
+	int		i;
+	char	*tab;
+	int		len;
 
 	i = 0;
 	len = 0;
@@ -55,7 +54,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 {
 	int		i;
 	char	*tab;
-	int 	j;
+	int		j;
 	int		k;
 
 	tab = ft_allocate_join(size, strs, sep);
@@ -77,12 +76,12 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	return (tab);
 }
 
-int main()
-{
-	int	size = 3;
-	char	*strs[] = {"apple" ,"banana" ,"potato"};
-	char *sep = ",";
-	char *res = ft_strjoin(size, strs, sep);
-
-	printf("%s" ,res);
-}
+// #include <stdio.h>
+// int main()
+// {
+// 	int	size = 3;
+// 	char	*strs[] = {"apple" ,"banana" ,"potato"};
+// 	char *sep = ",";
+// 	char *res = ft_strjoin(size, strs, sep);
+// 	printf("%s" ,res);
+// }
