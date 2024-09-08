@@ -6,7 +6,7 @@
 /*   By: hasbayou <hasbayou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 22:37:25 by hasbayou          #+#    #+#             */
-/*   Updated: 2024/09/07 20:23:45 by hasbayou         ###   ########.fr       */
+/*   Updated: 2024/09/08 19:29:44 by hasbayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strdup(char *src)
 	len = 0;
 	while (src[len])
 		len++;
-	str = malloc(sizeof(char) * len);
+	str = malloc(sizeof(char) * (len +1));
 	if (!str)
 		return (NULL);
 	while (src[i])

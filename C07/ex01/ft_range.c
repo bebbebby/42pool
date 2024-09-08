@@ -6,11 +6,10 @@
 /*   By: hasbayou <hasbayou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 22:59:15 by hasbayou          #+#    #+#             */
-/*   Updated: 2024/09/04 13:04:16 by hasbayou         ###   ########.fr       */
+/*   Updated: 2024/09/08 19:30:02 by hasbayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdlib.h>
 
 int	*ft_range(int min, int max)
