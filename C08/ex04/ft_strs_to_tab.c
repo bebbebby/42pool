@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strs_to_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hasbayou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hasbayou <hasbayou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 01:11:24 by hasbayou          #+#    #+#             */
-/*   Updated: 2024/09/10 01:11:26 by hasbayou         ###   ########.fr       */
+/*   Updated: 2024/09/10 20:29:41 by hasbayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,11 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strcpy(char *s1,  char *s2)
+char	*ft_strcpy(char *s1, char *s2)
 {
-	char *s1_original = s1;
+	char	*s1_original;
 
+	s1_original = s1;
 	while (*s2)
 	{
 		*s1 = *s2;
@@ -39,9 +40,10 @@ char	*ft_strcpy(char *s1,  char *s2)
 
 struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 {
-	t_stock_str *arr;
-	int i = 0;
+	t_stock_str	*arr;
+	int			i;
 
+	i = 0;
 	arr = malloc(sizeof(t_stock_str) * (ac + 1));
 	if (!arr)
 		return (NULL);
@@ -52,10 +54,9 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 		arr[i].copy = malloc(sizeof(char) * (arr[i].size + 1));
 		if (!arr[i].copy)
 			return (NULL);
-		arr[i].copy = ft_strcpy(arr[i].copy ,av[i]);
+		arr[i].copy = ft_strcpy(arr[i].copy, av[i]);
 		i++;
 	}
-	arr[i].size = 0;
 	arr[i].str = 0;
 	arr[i].copy = 0;
 	return (arr);
