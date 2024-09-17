@@ -6,7 +6,7 @@
 /*   By: hasbayou <hasbayou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 10:57:24 by hasbayou          #+#    #+#             */
-/*   Updated: 2024/09/08 17:28:00 by hasbayou         ###   ########.fr       */
+/*   Updated: 2024/09/13 10:31:31 by hasbayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,17 +91,17 @@ char	**ft_split(char	*str, char	*charset)
 	return (split);
 }
 
-// #include <stdio.h>
+#include <stdio.h>
 
-// int main()
-// {
-// 	char *str = "ana ‡,zwina ‡,he    ‡,pipie";
-// 	char *sep = "‡°";
-// 	int i = 0;
-// 	char **res = ft_split(str, sep);
-// 	while (res[i])
-// 	{
-// 		printf("'%s' " ,res[i]);
-// 		i++;
-// 	}
-// }
+int main()
+{
+	char *str = "ana zwina he pipie";
+	char *sep = " \t\n";
+	int i = 0;
+	char **res = ft_split(str, sep);
+	while (res[i])
+	{
+		printf("'%s' " ,res[i]);
+		i++;
+	}
+}

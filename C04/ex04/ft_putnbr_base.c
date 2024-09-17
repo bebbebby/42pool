@@ -6,7 +6,7 @@
 /*   By: hasbayou <hasbayou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 17:32:27 by hasbayou          #+#    #+#             */
-/*   Updated: 2024/09/02 14:01:22 by hasbayou         ###   ########.fr       */
+/*   Updated: 2024/09/15 18:00:35 by hasbayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	check_base(char *base)
 	int	i;
 	int	j;
 
-	if (ft_strlen(base) < 2 || ft_strlen(base) == 0)
+	if (ft_strlen(base) < 2)
 		return (0);
 	i = 0;
 	while (base[i])
@@ -55,7 +55,7 @@ int	check_base(char *base)
 
 void	ft_putuint(unsigned int nb, unsigned int base_len, char *base)
 {
-	if (nb / base_len)
+	if (nb / base_len != 0)
 		ft_putuint(nb / base_len, base_len, base);
 	ft_putchar(base[nb % base_len]);
 }
@@ -75,7 +75,7 @@ void	ft_putnbr_base(int nbr, char *base)
 	ft_putuint(nb_abs, (unsigned int)ft_strlen(base), base);
 }
 
-// int main()
-// {
-// 	ft_putnbr_base(2335, "-01234567");
-// }
+int main()
+{
+	ft_putnbr_base(2335, "01");
+}

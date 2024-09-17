@@ -6,7 +6,7 @@
 /*   By: hasbayou <hasbayou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 18:05:24 by hasbayou          #+#    #+#             */
-/*   Updated: 2024/09/08 10:31:26 by hasbayou         ###   ########.fr       */
+/*   Updated: 2024/09/15 12:38:25 by hasbayou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,9 +91,11 @@ char	*itoa_base(int nb, char *base_to)
 	return (arr);
 }
 
+// #include <limits.h>
+
 // int main()
 // {
-// 	int str = 123;
-// 	char *pipi = itoa_base(str, "01");
+// 	int str = INT_MAX;
+// 	char *pipi = itoa_base(str, "0123456789");
 // 	printf("%s" ,pipi);
 // }
